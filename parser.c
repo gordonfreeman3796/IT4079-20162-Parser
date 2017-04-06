@@ -141,7 +141,7 @@ void compileVarDecl(void) {
 void compileSubDecls(void) {
   assert("Parsing subroutines ....");
   /* Minh */
-  if (lookAhead->tokenType == KW_FUNCTION)
+  /*if (lookAhead->tokenType == KW_FUNCTION)
   {
     compileFuncDecl();
     if (lookAhead->tokenType == KW_FUNCTION || lookAhead->tokenType == KW_PROCEDURE)
@@ -152,7 +152,12 @@ void compileSubDecls(void) {
     compileProcDecl();
     if (lookAhead->tokenType == KW_FUNCTION || lookAhead->tokenType == KW_PROCEDURE)
       compileSubDecls();
-  }
+  }*/
+  while (lookAhead->tokenType == KW_FUNCTION || lookAhead->tokenType == KW_PROCEDURE)
+    if (lookAhead->tokenType == KW_FUNCTION)
+      compileFuncDecl();
+    else if (lookAhead->tokenType == KW_PROCEDURE)
+      compileProcDecl();
   /* Minh */
   assert("Subroutines parsed ....");
 }
