@@ -1,5 +1,5 @@
 # IT4079-20162-Parser
-Assignment for moudule "Compilers and Programming Languages" - IT4079
+Assignment for module "Compilers and Programming Languages" - IT4079
 ## Tasks
 Complete all the TODO functions.
 Re-implement compileArguments or compileExpression function using syntax diagrams of KPL.
