@@ -13,15 +13,15 @@ The project should be compiled by "make" and executed on Linux shell.
 ### Compiling and Executing
 Change the working directory into "incompleted" using cd command.
 Then, compile with "make"
-...
+```
 $ make
-...
+```
 Execute the compiled program with these command-line arguments
-...
+```
 ./parser ../test/example1.kpl
 ./parser ../test/example2.kpl
 ./parser ../test/example3.kpl
 ./parser ../test/example4.kpl
-...
+```
 ## Author
-Nguyen Duc Minh - 20146488@student.hust.edu.vn
+Nguyen Duc Minh - 20146488@student.hust.edu.vn - fb.me/minhnd3796
