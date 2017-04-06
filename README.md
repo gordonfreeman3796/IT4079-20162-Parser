@@ -11,9 +11,6 @@ Neither compileArguments nor compileExpression function has been reimplemented.
 ### Prerequisites
 The project should be compiled by "make" and executed on Linux shell.
 ### Compiling and Executing
-Change the working directory into "incompleted" using cd command.
-```
-$ cd incompleted
 ```
 Compile with "make"
 ```
