@@ -144,12 +144,14 @@ void compileSubDecls(void) {
   if (lookAhead->tokenType == KW_FUNCTION)
   {
     compileFuncDecl();
-    compileSubDecls();
+    if (lookAhead->tokenType == KW_FUNCTION || lookAhead->tokenType == KW_PROCEDURE)
+      compileSubDecls();
   }
   else if (lookAhead->tokenType == KW_PROCEDURE)
   {
     compileProcDecl();
-    compileSubDecls();
+    if (lookAhead->tokenType == KW_FUNCTION || lookAhead->tokenType == KW_PROCEDURE)
+      compileSubDecls();
   }
   /* Minh */
   assert("Subroutines parsed ....");

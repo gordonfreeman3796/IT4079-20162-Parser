@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include "error.h"
 
+extern FILE *outputStream;
+
 void error(ErrorCode err, int lineNo, int colNo) {
   switch (err) {
   case ERR_ENDOFCOMMENT:
@@ -62,5 +64,6 @@ void missingToken(TokenType tokenType, int lineNo, int colNo) {
 }
 
 void assert(char *msg) {
+  /*fprintf(outputStream, "%s\n", msg);*/
   printf("%s\n", msg);
 }

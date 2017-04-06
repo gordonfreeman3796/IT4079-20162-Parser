@@ -12,16 +12,19 @@
 
 /******************************************************************/
 
+FILE *outputStream;
+
 int main(int argc, char *argv[]) {
   if (argc <= 1) {
     printf("Parser: no input file.\n");
     return -1;
   }
 
+  outputStream = fopen("result.txt", "w");
   if (compile(argv[1]) == IO_ERROR) {
     printf("Can\'t read input file!\n");
     return -1;
   }
-    
+  fclose(outputStream);
   return 0;
 }
