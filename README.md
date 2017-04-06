@@ -3,9 +3,9 @@ Assignment for module "Compilers and Programming Languages" - IT4079
 ## Tasks
 Complete all the TODO functions and re-implement compileArguments or compileExpression function using syntax diagrams of KPL.
 ### Finished tasks
-Minh has finished all the TODO functions and the whole project can be complied completely with "make" in Linux.
+Minh has finished all the TODO functions with BNF grammar rules and the whole project can be complied completely with "make" in Linux.
 ### Unfinished tasks
-Neither compileArguments nor compileExpression function have been reimplemented.
+Neither compileArguments nor compileExpression function have been reimplemented using KPL syntax diagrams.
 ## Demo
 ### Prerequisites
 The project should be compiled by "make" and executed on Linux shell.
