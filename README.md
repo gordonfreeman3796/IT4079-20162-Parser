@@ -6,7 +6,7 @@ Re-implement compileArguments or compileExpression function using syntax diagram
 ### Finished tasks
 Minh has finished all the TODO functions and the whole project can be complied completely with "make" in Linux.
 ### Unfinished tasks
-Neither compileArguments nor compileExpression function has been reimplemented.
+Neither compileArguments nor compileExpression function have been reimplemented.
 ## Demo
 ### Prerequisites
 The project should be compiled by "make" and executed on Linux shell.
