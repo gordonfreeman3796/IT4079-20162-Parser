@@ -11,7 +11,6 @@ Neither compileArguments nor compileExpression function has been reimplemented.
 ### Prerequisites
 The project should be compiled by "make" and executed on Linux shell.
 ### Compiling and Executing
-```
 Compile with "make"
 ```
 $ make
