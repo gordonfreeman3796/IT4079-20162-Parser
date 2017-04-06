@@ -1,8 +1,7 @@
 # IT4079-20162-Parser
 Assignment for module "Compilers and Programming Languages" - IT4079
 ## Tasks
-Complete all the TODO functions.
-Re-implement compileArguments or compileExpression function using syntax diagrams of KPL.
+Complete all the TODO functions and re-implement compileArguments or compileExpression function using syntax diagrams of KPL.
 ### Finished tasks
 Minh has finished all the TODO functions and the whole project can be complied completely with "make" in Linux.
 ### Unfinished tasks
