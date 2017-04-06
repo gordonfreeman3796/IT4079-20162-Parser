@@ -401,7 +401,7 @@ void compileWhileSt(void) {
   eat(KW_DO);
   compileStatement();
   /* Minh */
-  assert("While statement pased ....");
+  assert("While statement parsed ....");
 }
 
 void compileForSt(void) {
@@ -419,13 +419,29 @@ void compileForSt(void) {
   assert("For statement parsed ....");
 }
 
-void compileArguments(void) {
+void compileArguments_BNF(void) {
   /* Minh */
   if (lookAhead->tokenType == SB_LPAR)
   {
     eat(SB_LPAR);
     compileExpression();
     compileArguments2();
+    eat(SB_RPAR);
+  }
+  /* Minh */
+}
+
+void compileArguments(void) {
+  /* Minh */
+  if (lookAhead->tokenType == SB_LPAR)
+  {
+    eat(SB_LPAR);
+    compileExpression();
+    while (lookAhead->tokenType == SB_COMMA)
+    {
+      eat(SB_COMMA);
+      compileExpression();
+    }
     eat(SB_RPAR);
   }
   /* Minh */
@@ -477,7 +493,7 @@ void compileCondition2(void) {
   /* Minh */
 }
 
-void compileExpression(void) {
+void compileExpression_BNF(void) {
   assert("Parsing an expression");
   /* Minh */
   if (lookAhead->tokenType == SB_PLUS)
@@ -492,6 +508,26 @@ void compileExpression(void) {
   }
   else
     compileExpression2();
+  /* Minh */
+  assert("Expression parsed");
+}
+
+void compileExpression(void) {
+  assert("Parsing an expression");
+  /* Minh */
+  if (lookAhead->tokenType == SB_PLUS)
+    eat(SB_PLUS);
+  else if (lookAhead->tokenType == SB_MINUS)
+    eat(SB_MINUS);
+  compileTerm();
+  while (lookAhead->tokenType == SB_PLUS || lookAhead->tokenType == SB_MINUS)
+  {
+    if (lookAhead->tokenType == SB_PLUS)
+      eat(SB_PLUS);
+    else if (lookAhead->tokenType == SB_MINUS)
+      eat(SB_MINUS);
+    compileTerm();
+  }
   /* Minh */
   assert("Expression parsed");
 }
