@@ -82,65 +82,65 @@ void compileBlock5(void) {
 }
 
 void compileConstDecls(void) {
-  /* Minh */
+  /* Tien */
   if (lookAhead->tokenType == TK_IDENT)
   {
     compileConstDecl();
     compileConstDecls();
   }
-  /* Minh */
+  /* Tien */
 }
 
 void compileConstDecl(void) {
-  /* Minh */
+  /* Tien */
   eat(TK_IDENT);
   eat(SB_EQ);
   compileConstant();
   eat(SB_SEMICOLON);
-  /* Minh */
+  /* Tien */
 }
 
 void compileTypeDecls(void) {
-  /* Minh */
+  /* Tien */
   if (lookAhead->tokenType == TK_IDENT)
   {
     compileTypeDecl();
     compileTypeDecls();
   }
-  /* Minh */
+  /* Tien */
 }
 
 void compileTypeDecl(void) {
-  /* Minh */
+  /* Tien */
   eat(TK_IDENT);
   eat(SB_EQ);
   compileType();
   eat(SB_SEMICOLON);
-  /* Minh */
+  /* Tien */
 }
 
 void compileVarDecls(void) {
-  /* Minh */
+  /* Tien */
   if (lookAhead->tokenType == TK_IDENT)
   {
     compileVarDecl();
     compileVarDecls();
   }
-  /* Minh */
+  /* Tien */
 }
 
 void compileVarDecl(void) {
-  /* Minh */
+  /* Tien */
   eat(TK_IDENT);
   eat(SB_COLON);
   compileType();
   eat(SB_SEMICOLON);
-  /* Minh */
+  /* Tien */
 }
 
 void compileSubDecls(void) {
   assert("Parsing subroutines ....");
-  /* Minh */
+  /* Quynh */
   /*if (lookAhead->tokenType == KW_FUNCTION)
   {
     compileFuncDecl();
@@ -158,13 +158,13 @@ void compileSubDecls(void) {
       compileFuncDecl();
     else if (lookAhead->tokenType == KW_PROCEDURE)
       compileProcDecl();
-  /* Minh */
+  /* Quynh */
   assert("Subroutines parsed ....");
 }
 
 void compileFuncDecl(void) {
   assert("Parsing a function ....");
-  /* Minh */
+  /* Quynh */
   eat(KW_FUNCTION);
   eat(TK_IDENT);
   compileParams();
@@ -173,36 +173,36 @@ void compileFuncDecl(void) {
   eat(SB_SEMICOLON);
   compileBlock();
   eat(SB_SEMICOLON);
-  /* Minh */
+  /* Quynh */
   assert("Function parsed ....");
 }
 
 void compileProcDecl(void) {
   assert("Parsing a procedure ....");
-  /* Minh */
+  /* Quynh */
   eat(KW_PROCEDURE);
   eat(TK_IDENT);
   compileParams();
   eat(SB_SEMICOLON);
   compileBlock();
   eat(SB_SEMICOLON);
-  /* Minh */
+  /* Quynh */
   assert("Procedure parsed ....");
 }
 
 void compileUnsignedConstant(void) {
-  /* Minh */
+  /* Quynh */
   if (lookAhead->tokenType == TK_NUMBER)
     eat(TK_NUMBER);
   else if (lookAhead->tokenType == TK_IDENT)
     eat(TK_IDENT);
   else if (lookAhead->tokenType == TK_CHAR)
     eat(TK_CHAR);
-  /* Minh */
+  /* Quynh */
 }
 
 void compileConstant(void) {
-  /* Minh */
+  /* Quynh */
   if (lookAhead->tokenType == SB_PLUS)
   {
     eat(SB_PLUS);
@@ -217,20 +217,20 @@ void compileConstant(void) {
     eat(TK_CHAR);
   else
     compileConstant2();
-  /* Minh */
+  /* Quynh */
 }
 
 void compileConstant2(void) {
-  /* Minh */
+  /* Quynh */
   if (lookAhead->tokenType == TK_IDENT)
     eat(TK_IDENT);
   else if (lookAhead->tokenType == TK_NUMBER)
     eat(TK_NUMBER);
-  /* Minh */
+  /* Quynh */
 }
 
 void compileType(void) {
-  /* Minh */
+  /* Huyen */
   if (lookAhead->tokenType == KW_INTEGER)
     eat(KW_INTEGER);
   else if (lookAhead->tokenType == KW_CHAR)
@@ -246,20 +246,20 @@ void compileType(void) {
     eat(KW_OF);
     compileType();
   }
-  /* Minh */
+  /* Huyen */
 }
 
 void compileBasicType(void) {
-  /* Minh */
+  /* Huyen */
   if (lookAhead->tokenType == KW_INTEGER)
     eat(KW_INTEGER);
   else if (lookAhead->tokenType == KW_CHAR)
     eat(KW_CHAR);
-  /* Minh */
+  /* Huyen */
 }
 
 void compileParams(void) {
-  /* Minh */
+  /* Huyen */
   if (lookAhead->tokenType == SB_LPAR)
   {
     eat(SB_LPAR);
@@ -267,22 +267,22 @@ void compileParams(void) {
     compileParams2();
     eat(SB_RPAR);
   }
-  /* Minh */
+  /* Huyen */
 }
 
 void compileParams2(void) {
-  /* Minh */
+  /* Huyen */
   if (lookAhead->tokenType == SB_SEMICOLON)
   {
     eat(SB_SEMICOLON);
     compileParam();
     compileParams2();
   }
-  /* Minh */
+  /* Huyen */
 }
 
 void compileParam(void) {
-  /* Minh */
+  /* Huyen */
   if (lookAhead->tokenType == TK_IDENT)
   {
     eat(TK_IDENT);
@@ -296,25 +296,25 @@ void compileParam(void) {
     eat(SB_COLON);
     compileBasicType();
   }
-  /* Minh */
+  /* Huyen */
 }
 
 void compileStatements(void) {
-  /* Minh */
+  /* Huyen */
   compileStatement();
   compileStatements2();
-  /* Minh */
+  /* Huyen */
 }
 
 void compileStatements2(void) {
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   if (lookAhead->tokenType == SB_SEMICOLON)
   {
     eat(SB_SEMICOLON);
     compileStatement();
     compileStatements2();
   }
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
 }
 
 void compileStatement(void) {
@@ -351,7 +351,7 @@ void compileStatement(void) {
 
 void compileAssignSt(void) {
   assert("Parsing an assign statement ....");
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   if (lookAhead->tokenType == TK_IDENT)
   {
     eat(TK_IDENT);
@@ -360,27 +360,27 @@ void compileAssignSt(void) {
     eat(SB_ASSIGN);
     compileExpression();
   }
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   assert("Assign statement parsed ....");
 }
 
 void compileCallSt(void) {
   assert("Parsing a call statement ....");
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   eat(KW_CALL);
   eat(TK_IDENT);
   compileArguments();
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   assert("Call statement parsed ....");
 }
 
 void compileGroupSt(void) {
   assert("Parsing a group statement ....");
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   eat(KW_BEGIN);
   compileStatements();
   eat(KW_END);
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   assert("Group statement parsed ....");
 }
 
@@ -405,18 +405,18 @@ void compileElseSt(void) {
 
 void compileWhileSt(void) {
   assert("Parsing a while statement ....");
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   eat(KW_WHILE);
   compileCondition();
   eat(KW_DO);
   compileStatement();
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   assert("While statement parsed ....");
 }
 
 void compileForSt(void) {
   assert("Parsing a for statement ....");
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   eat(KW_FOR);
   eat(TK_IDENT);
   eat(SB_ASSIGN);
@@ -425,7 +425,7 @@ void compileForSt(void) {
   compileExpression();
   eat(KW_DO);
   compileStatement();
-  /* Minh */
+  /* Vu Anh Nguyen Hoang */
   assert("For statement parsed ....");
 }
 
@@ -442,7 +442,7 @@ void compileArguments_BNF(void) {
 }
 
 void compileArguments(void) {
-  /* Minh */
+  /* Hung */
   if (lookAhead->tokenType == SB_LPAR)
   {
     eat(SB_LPAR);
@@ -454,29 +454,29 @@ void compileArguments(void) {
     }
     eat(SB_RPAR);
   }
-  /* Minh */
+  /* Hung */
 }
 
 void compileArguments2(void) {
-  /* Minh */
+  /* Hung */
   if (lookAhead->tokenType == SB_COMMA)
   {
     eat(SB_COMMA);
     compileExpression();
     compileArguments2();
   }
-  /* Minh */
+  /* Hung */
 }
 
 void compileCondition(void) {
-  /* Minh */
+  /* Hung */
   compileExpression();
   compileCondition2();
-  /* Minh */
+  /* Hung */
 }
 
 void compileCondition2(void) {
-  /* Minh */
+  /* Hung */
   switch (lookAhead->tokenType)
   {
     case SB_EQ:
@@ -500,7 +500,7 @@ void compileCondition2(void) {
     default: break;
   }
   compileExpression();
-  /* Minh */
+  /* Hung */
 }
 
 void compileExpression_BNF(void) {
@@ -524,7 +524,7 @@ void compileExpression_BNF(void) {
 
 void compileExpression(void) {
   assert("Parsing an expression");
-  /* Minh */
+  /* Hung */
   if (lookAhead->tokenType == SB_PLUS)
     eat(SB_PLUS);
   else if (lookAhead->tokenType == SB_MINUS)
@@ -538,20 +538,20 @@ void compileExpression(void) {
       eat(SB_MINUS);
     compileTerm();
   }
-  /* Minh */
+  /* Hung */
   assert("Expression parsed");
 }
 
 void compileExpression2(void) {
-  /* Minh */
+  /* Hung */
   compileTerm();
   compileExpression3();
-  /* Minh */
+  /* Hung */
 }
 
 
 void compileExpression3(void) {
-  /* Minh */
+  /* Hung */
   if (lookAhead->tokenType == SB_PLUS)
   {
     eat(SB_PLUS);
@@ -564,7 +564,7 @@ void compileExpression3(void) {
     compileTerm();
     compileExpression3();
   }
-  /* Minh */
+  /* Hung */
 }
 
 void compileTerm(void) {
