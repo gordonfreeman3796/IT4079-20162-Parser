@@ -396,8 +396,11 @@ void compileIfSt(void) {
 }
 
 void compileElseSt(void) {
-  eat(KW_ELSE);
-  compileStatement();
+  if (lookAhead->tokenType == KW_ELSE)
+  {
+    eat(KW_ELSE);
+    compileStatement();
+  }
 }
 
 void compileWhileSt(void) {
