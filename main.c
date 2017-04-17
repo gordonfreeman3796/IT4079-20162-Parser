@@ -20,11 +20,11 @@ int main(int argc, char *argv[]) {
     return -1;
   }
 
-  outputStream = fopen("result.txt", "w");
+  /*outputStream = fopen("result.txt", "w");*/
   if (compile(argv[1]) == IO_ERROR) {
     printf("Can\'t read input file!\n");
     return -1;
   }
-  fclose(outputStream);
+  /*fclose(outputStream);*/
   return 0;
 }

@@ -307,14 +307,14 @@ void compileStatements(void) {
 }
 
 void compileStatements2(void) {
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   if (lookAhead->tokenType == SB_SEMICOLON)
   {
     eat(SB_SEMICOLON);
     compileStatement();
     compileStatements2();
   }
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
 }
 
 void compileStatement(void) {
@@ -351,7 +351,7 @@ void compileStatement(void) {
 
 void compileAssignSt(void) {
   assert("Parsing an assign statement ....");
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   if (lookAhead->tokenType == TK_IDENT)
   {
     eat(TK_IDENT);
@@ -360,27 +360,27 @@ void compileAssignSt(void) {
     eat(SB_ASSIGN);
     compileExpression();
   }
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   assert("Assign statement parsed ....");
 }
 
 void compileCallSt(void) {
   assert("Parsing a call statement ....");
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   eat(KW_CALL);
   eat(TK_IDENT);
   compileArguments();
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   assert("Call statement parsed ....");
 }
 
 void compileGroupSt(void) {
   assert("Parsing a group statement ....");
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   eat(KW_BEGIN);
   compileStatements();
   eat(KW_END);
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   assert("Group statement parsed ....");
 }
 
@@ -405,18 +405,18 @@ void compileElseSt(void) {
 
 void compileWhileSt(void) {
   assert("Parsing a while statement ....");
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   eat(KW_WHILE);
   compileCondition();
   eat(KW_DO);
   compileStatement();
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   assert("While statement parsed ....");
 }
 
 void compileForSt(void) {
   assert("Parsing a for statement ....");
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   eat(KW_FOR);
   eat(TK_IDENT);
   eat(SB_ASSIGN);
@@ -425,7 +425,7 @@ void compileForSt(void) {
   compileExpression();
   eat(KW_DO);
   compileStatement();
-  /* Vu Anh Nguyen Hoang */
+  /* Vu Anh */
   assert("For statement parsed ....");
 }
 
@@ -524,7 +524,7 @@ void compileExpression_BNF(void) {
 
 void compileExpression(void) {
   assert("Parsing an expression");
-  /* Hung */
+  /* Minh */
   if (lookAhead->tokenType == SB_PLUS)
     eat(SB_PLUS);
   else if (lookAhead->tokenType == SB_MINUS)
@@ -538,7 +538,7 @@ void compileExpression(void) {
       eat(SB_MINUS);
     compileTerm();
   }
-  /* Hung */
+  /* Minh */
   assert("Expression parsed");
 }
 
