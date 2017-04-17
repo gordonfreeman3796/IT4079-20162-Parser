@@ -390,17 +390,14 @@ void compileIfSt(void) {
   compileCondition();
   eat(KW_THEN);
   compileStatement();
-  if (lookAhead->tokenType == KW_ELSE) 
+  if (lookAhead->tokenType == KW_ELSE)
     compileElseSt();
   assert("If statement parsed ....");
 }
 
 void compileElseSt(void) {
-  if (lookAhead->tokenType == KW_ELSE)
-  {
-    eat(KW_ELSE);
-    compileStatement();
-  }
+  eat(KW_ELSE);
+  compileStatement();
 }
 
 void compileWhileSt(void) {
